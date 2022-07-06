@@ -7,7 +7,7 @@
     <title>Document</title>
   </head>
   <body>
-    <div data-container class="container">
+    <div id="container" data-container class="container">
       <div data-header class="header">header</div>
       <div data-body class="body">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit beatae explicabo distinctio quibusdam eum
@@ -61,10 +61,10 @@
       flex-direction: column;
       width: 100vw;
       height: 100vh;
-      min-height: 100vh; /* fall-back */
+      /* min-height: 100vh;
       min-height: -moz-available;
       min-height: -webkit-fill-available;
-      min-height: fill-available;
+      min-height: fill-available; */
     }
 
     .header {
@@ -88,4 +88,11 @@
       flex-shrink: 0;
     }
   </style>
+
+  <script>
+    (function () {
+      const el = document.getElementById("container");
+      el.style.height = window.innerHeight + "px";
+    })();
+  </script>
 </html>
