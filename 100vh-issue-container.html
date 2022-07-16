@@ -8,7 +8,8 @@
   </head>
   <body>
     <div id="container" data-container class="container">
-      this is a 100vh container
+      <div>this is a 100vh container</div>
+      <div id="container-height"></div>
     </div>
   </body>
 
@@ -28,6 +29,9 @@
   </style>
 
   <script>
-
+    var containerElement = document.getElementById('container');
+    var containerHeight = containerElement.clientHeight;
+    var heightElement = document.getElementById('container-height');
+    heightElement.innerText = heightElement + 'px';
   </script>
 </html>
