@@ -31,18 +31,22 @@
   </style>
 
   <script>
-    var containerElement = document.getElementById("container");
-    var containerHeight = containerElement.clientHeight;
-    var heightElement = document.getElementById("container-height");
-    heightElement.innerText = "container clientHeight: " + containerHeight + "px";
+    (function () {
+      function updateWindowHeight() {
+        var containerElement = document.getElementById("container");
+        var containerHeight = containerElement.clientHeight;
+        var heightElement = document.getElementById("container-height");
+        heightElement.innerText = "container clientHeight: " + containerHeight + "px";
 
-    function updateWindowHeight() {
-      var windowHeightEl = document.getElementById("window-height");
-      windowHeightEl.innerHTML = "window innerHeight: " + window.innerHeight + "px";
-    }
+        var windowHeightEl = document.getElementById("window-height");
+        var currentWindowHeight = window.innerHeight;
+        windowHeightEl.innerHTML = "window innerHeight: " + currentWindowHeight + "px";
+        containerElement.style.height = window.innerHeight + "px";
+      }
 
-    updateWindowHeight();
+      updateWindowHeight();
 
-    window.addEventListener('resize', updateWindowHeight);
+      window.addEventListener("resize", updateWindowHeight);
+    })();
   </script>
 </html>
