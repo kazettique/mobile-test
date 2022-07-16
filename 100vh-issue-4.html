@@ -33,15 +33,17 @@
   <script>
     (function () {
       function updateWindowHeight() {
-        var containerElement = document.getElementById("container");
-        var containerHeight = containerElement.clientHeight;
-        var heightElement = document.getElementById("container-height");
-        heightElement.innerText = "container clientHeight: " + containerHeight + "px";
+        var currentWindowHeight = window.innerHeight;
 
         var windowHeightEl = document.getElementById("window-height");
-        var currentWindowHeight = window.innerHeight;
         windowHeightEl.innerHTML = "window innerHeight: " + currentWindowHeight + "px";
-        containerElement.style.height = window.innerHeight + "px";
+        
+        var containerElement = document.getElementById("container");
+        containerElement.style.height = currentWindowHeight + "px";
+        var containerHeight = containerElement.clientHeight;
+
+        var heightElement = document.getElementById("container-height");
+        heightElement.innerText = "container clientHeight: " + containerHeight + "px";
       }
 
       updateWindowHeight();
