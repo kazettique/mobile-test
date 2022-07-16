@@ -40,7 +40,7 @@
       var windowHeightEl = document.getElementById("window-height");
       var currentWindowHeight = window.innerHeight;
       windowHeightEl.innerHTML = "window innerHeight: " + currentWindowHeight + "px";
-      containerElement.clientHeight = currentWindowHeight;
+      containerElement.style.height = window.innerHeight + "px";
     }
 
     updateWindowHeight();
