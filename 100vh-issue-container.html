@@ -10,6 +10,7 @@
     <div id="container" data-container class="container">
       <div>this is a 100vh container</div>
       <div id="container-height"></div>
+      <div id="window-height"></div>
     </div>
   </body>
 
@@ -32,6 +33,9 @@
     var containerElement = document.getElementById("container");
     var containerHeight = containerElement.clientHeight;
     var heightElement = document.getElementById("container-height");
-    heightElement.innerText = heightElement + "px";
+    heightElement.innerText = "container clientHeight: " + containerHeight + "px";
+
+    var windowHeightEl = document.getElementById("window-height");
+    windowHeightEl.innerHTML = "window innerHeight: " + window.innerHeight + "px";
   </script>
 </html>
