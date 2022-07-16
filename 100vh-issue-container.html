@@ -9,9 +9,6 @@
   <body>
     <div id="container" data-container class="container">
       <div>this is a 100vh container</div>
-      <div>--------------------------</div>
-      <div id="container-height"></div>
-      <div id="window-height"></div>
     </div>
   </body>
 
@@ -27,22 +24,9 @@
       width: 100vw;
       height: 100vh;
       background: lavender;
+      padding: 5px;
     }
   </style>
 
-  <script>
-    var containerElement = document.getElementById("container");
-    var containerHeight = containerElement.clientHeight;
-    var heightElement = document.getElementById("container-height");
-    heightElement.innerText = "container clientHeight: " + containerHeight + "px";
-
-    function updateWindowHeight() {
-      var windowHeightEl = document.getElementById("window-height");
-      windowHeightEl.innerHTML = "window innerHeight: " + window.innerHeight + "px";
-    }
-
-    updateWindowHeight();
-
-    window.addEventListener('resize', updateWindowHeight);
-  </script>
+  <script></script>
 </html>
